@@ -180,13 +180,4 @@ class Validator
         return $this;
     }
 
-    private function toArray($params): array
-    {
-        $refObj = new \ReflectionObject($params);
-        $array = [];
-        foreach ($refObj->getProperties(ReflectionProperty::IS_PUBLIC) as $property) {
-            $array[$property] = $params->{$property};
-        }
-        return $array;
-    }
 }
